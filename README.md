@@ -1,17 +1,19 @@
 ## Structure du Projet
 
 projet-chatbot/
-├── app.py # Backend Flask
+├── app.py                 # Backend Flask principal
 ├── templates/
-│ └── index.html # Page web principale (HTML)
-│  └── login.html 
-│ └── register.html 
-│ └── chat.html 
-├── static/
-│ └── style-chat.css 
-  └── style-sidebar.css 
+│   ├── index.html         # Page d'accueil
+│   ├── login.html         # Page de connexion
+│   ├── register.html      # Page d'inscription
+│   └── chat.html          # Interface de discussion
+└── static/
+    └── css/
+        ├── style-chat.css      # Styles du chat
+        └── style-sidebar.css   # Styles de la sidebar
 
-## Base de Données (PostgreSQL)
+---
+**Base de Données (PostgreSQL)**
 Créez une base de données nommée energy_chatbot:
 **Table `users:**  Stocke les informations des utilisateurs.  
 CREATE TABLE users (

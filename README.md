@@ -1,4 +1,5 @@
 ## Structure du Projet
+```
 
 projet-chatbot/
 ├── app.py                 # Backend Flask principal
@@ -11,11 +12,15 @@ projet-chatbot/
     └── css/
         ├── style-chat.css      # Styles du chat
         └── style-sidebar.css   # Styles de la sidebar
+```
 
 ---
-**Base de Données (PostgreSQL)**
+**Base de Données (PostgreSQL)**:
+
 Créez une base de données nommée energy_chatbot:
-**Table `users:**  Stocke les informations des utilisateurs.  
+
+**Table users:**  Stocke les informations des utilisateurs. 
+
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
@@ -24,7 +29,11 @@ CREATE TABLE users (
     password_hash TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
 **Table conversations** Garde l'historique des discussions.
+
+
 CREATE TABLE conversations (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
@@ -32,6 +41,8 @@ CREATE TABLE conversations (
     bot_response TEXT NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
 
 
 

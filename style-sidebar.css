@@ -1,0 +1,181 @@
+
+
+.sidebar-closed {
+    transform: translateX(-90%); 
+}
+.sidebar-closed-mobile {
+    transform: translateX(-90%); 
+}
+.sidebar-arrow {
+    cursor: pointer;
+    visibility: visible;
+}
+
+.sidebar {
+    transition: transform 0.3s ease-in-out;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+    gap: 24px;
+    z-index: 10;
+}
+
+/* -----------  MOBILE - Menu Hmaburguer    ----------- */
+.hamburger {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+    .line {
+        fill: none;
+        stroke: white;
+        stroke-width: 2;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .line1 {
+        transform-origin: 50% 50%;
+    }
+
+    .line2 {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .line3 {
+        transform-origin: 50% 50%;
+    }
+
+    .close .line1 {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .close .line2 {
+        opacity: 0;
+    }
+
+    .close .line3 {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+.sidebar-inner {
+    width: 250px;
+    display: flex;
+    background-color: #f9f8f9;
+    flex-direction: column;
+    height: 100%;
+    border-top-left-radius: 15px; /* Arrondi gauche en haut */
+    border-top-right-radius: 15px; /* Arrondi droit en haut */
+    border-bottom-left-radius: 15px; /* Arrondi en bas à gauche */
+    border-bottom-right-radius: 15px; /
+    overflow: hidden; /* Pour éviter tout débordement */
+    max-height: 100%;
+    padding: 0 12px;
+}
+
+.sidebar-content {
+    flex: 1;
+    width: 100%;
+    padding: 40px 0;
+    position: relative;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.new-chat-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px;
+    gap: 1rem;
+    border-radius: 4px;
+    background-color: #8a8c8d;
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 20px;
+
+}
+.new-chat-button:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    color: white;
+}
+
+.new-chat-span {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.new-chat-text {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+
+}
+
+.chat-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    overflow: auto;
+    height: 100%;
+}
+
+.login-section {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.login-button {
+    
+    
+
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px;
+    gap: 1rem;
+    border-radius: 4px;
+    background-color: #8a8c8d;
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 20px;
+}
+    .login-button:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    color: white;
+    }
+
+.login-text {
+    font-weight: normal;
+    color: rgb(10, 10, 10);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .sidebar-arrow {
+        visibility: hidden;
+    }
+}

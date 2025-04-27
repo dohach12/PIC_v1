@@ -1,0 +1,212 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.main-container {
+    background-color: #e8e8e7;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.content {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+
+
+}
+
+.header {
+    visibility: hidden;
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    
+}
+
+/* -------- Page Center - CHATBOT UI   -------- */
+.page-center {
+    flex: 1;
+    display: flex;
+    width: 60%;
+    min-width: 300px;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    padding-top: 0px; /* Espace pour le header fixe */
+
+    padding-bottom: 1px;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 24px;
+}
+
+.logo {
+    width: 66%;
+}
+
+
+
+/* -------- SUGGESTED QUESTIONS   -------- */
+.suggested-questions {
+    width: 100%;
+    max-width: 600px;
+}
+
+.items-chat {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.suggested-title {
+    font-size: 16px;
+    color: #6c6766;
+    padding-left: 14px;
+}
+
+/* -------- CARDS ITEMS - SUGGESTED QUESTIONS   -------- */
+.grid-questions-container {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr; 
+    gap: 20px 20px; 
+    grid-template-areas: 
+    ". ."
+    ". ."; 
+}
+
+    .question-item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        background: #f9f8f9;
+        border-radius: 8px;
+        border: 1px solid #2a0bd7;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+        .question-item:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #f9f8f9;
+        }
+    .question-category {
+        font-size: 14px;
+        color: #434343;
+    }
+    .question-text {
+        font-size: 14px;
+        color: #000000;
+    }
+    .question-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: none;
+    }
+        .question-item:hover .question-icon {
+            display: flex;
+            background-color: #191621;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+/* ----------   INPUT PROMPTS   ---------- */
+.container-input-logo {
+    width: 100%;
+}
+.input-chat {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    background: #f9f8f9;
+    border-radius: 12px;
+    border: 1px solid #1f0b92;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 
+    rgb(255, 255, 255) 0px 0px 0px 0px, rgb(10, 34, 219) 0px 0px 0px 0.5px, rgba(0, 0, 0, 0) 0px 0px 0px 0px
+}
+.input-chat:hover {
+    border: 1px solid #361eb0;
+}
+
+#mainInput {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #040404;
+    font-size: 16px;
+    outline: none;
+}
+
+#sendIcon {
+    cursor: pointer;
+}
+
+#check {
+    width: 24px;
+    height: 24px;
+}
+
+.logo-footer-chat {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.powered-by {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #0c0c0d;
+}
+
+.powered-logo {
+    width: 75px;
+    height: 30px;
+    margin-left: 4px;
+}
+
+/* ----------   Media Queries   ---------- */
+@media screen and (min-width: 768px) {
+    .md\\:hidden {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hidden-md {
+        display: none;
+        
+    }
+    .grid-questions-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .header {
+        visibility: visible;
+    }
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI</title>
+    <link href="{{ url_for('static', filename='css/style-chat.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style-sidebar.css') }}" rel="stylesheet">
+
+</head>
+<style>
+    .custom-logo {
+      color: #007BFF; /* Example: blue */
+    }
+  </style>
+<body>
+    <div class="main-container">
+
+        <div class="header">
+            <div id="toggle-button-mobile">
+                <svg  class="hamburger" viewBox="0 0 24 24">
+                    <line class="line line1" x1="3" y1="6" x2="21" y2="6" />
+                    <line class="line line2" x1="3" y1="12" x2="21" y2="12" />
+                    <line class="line line3" x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </div>
+            <div>
+                <button class="new-chat-button">
+                    <span class="new-chat-span">
+                        <img alt="new" loading="lazy" width="23" height="23" decoding="async" src="https://faheim.ai/files/tremed-logo.svg">
+                        <p class="new-chat-text">New Chat</p>
+                    </span>
+
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="#F2F0FF"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- ----------SIDEBAR - PAGE ---------- -->
+            <div class="sidebar">
+                <div class="sidebar-inner">
+                    <div class="sidebar-content">
+                        <button class="new-chat-button">
+                            <span class="new-chat-span">
+                                
+                            <svg class="w-5 h-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd">
+                                    <path d="M0 10C0 4.477 4.477 0 10 0s10 4.477 10 10-4.477 10-10 10H.006q.219-.36.61-.618c.423-.278.922-.295 1.475-.314.853-.03 1.833-.064 2.86-1.068H10a8 8 0 1 0-8-8v6.443c-.604.128-1.246.422-1.906 1.135L0 17.683z"></path>
+                                    <path d="M10 3.962A6.04 6.04 0 0 0 3.962 10v5.845a1.7 1.7 0 0 0 .639-.245q1.115-.732.829-2.317.944 1.446.528 2.755H10a6.038 6.038 0 1 0 0-12.076"></path>
+                                </g>
+                                <p class="new-chat-text">New Chat</p>
+
+                            </svg>
+                        </span>
+
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="#F2F0FF"></path>
+                            </svg>
+                        </button>
+                        <div class="chat-list"></div>
+                    </div>
+        
+                    
+                </div>
+                <img class="sidebar-arrow" id="toggle-button" src="https://faheim.ai/files/leftArrow.svg" alt="arrow">
+            </div>
+            <!-- ----------CHATBOT - PAGE ---------- -->
+            <div class="page-center">
+                <div class="flex flex-row items-center gap-1 mr-3">
+                    <!-- Premier logo - taille cohérente -->
+                    
+                    <h class="text-lg font-semibold whitespace-nowrap"> Suggested Questions</h>
+                    <!-- Deuxième logo - soit supprimé s'il est vide, soit rempli -->
+                    
+                </div>
+                
+                <div class="items-chat">
+                    <h3 class="suggested-title"></h3>
+                    <div class="grid-questions-container">
+                        <div class="question-item">
+                            <p class="question-category">What are the five reasons that</p>
+                            <h3 class="question-text">explain the challenge of transitioning to renewable energy?</h3>
+                            <span class="question-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="pb-.5">
+                                    <g clip-path="url(#clip0_708_2523)">
+                                        <path
+                                            d="M16.8854 15.7054L18.2954 14.2954L12.2954 8.29541L6.29541 14.2954L7.70541 15.7054L12.2954 11.1254L16.8854 15.7054Z"
+                                            fill="#F2F0FF"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_708_2523">
+                                            <rect width="24" height="24" fill="white"
+                                                transform="matrix(-1 0 0 -1 24.0005 24.0005)"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="question-item">
+                            <p class="question-category">How has the development of shale gas</p>
+                            <h3 class="question-text">reserves affected the thinking about fossil fuel exploitation?</h3>
+                            <span class="question-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="pb-.5">
+                                    <g clip-path="url(#clip0_708_2523)">
+                                        <path
+                                            d="M16.8854 15.7054L18.2954 14.2954L12.2954 8.29541L6.29541 14.2954L7.70541 15.7054L12.2954 11.1254L16.8854 15.7054Z"
+                                            fill="#F2F0FF"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_708_2523">
+                                            <rect width="24" height="24" fill="white"
+                                                transform="matrix(-1 0 0 -1 24.0005 24.0005)"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="question-item hidden-md">
+                            <p class="question-category">What was the growth rate</p>
+                            <h3 class="question-text">of global LNG supply in 2023?</h3>
+                            <span class="question-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="pb-.5">
+                                    <g clip-path="url(#clip0_708_2523)">
+                                        <path
+                                            d="M16.8854 15.7054L18.2954 14.2954L12.2954 8.29541L6.29541 14.2954L7.70541 15.7054L12.2954 11.1254L16.8854 15.7054Z"
+                                            fill="#F2F0FF"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_708_2523">
+                                            <rect width="24" height="24" fill="white"
+                                                transform="matrix(-1 0 0 -1 24.0005 24.0005)"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="question-item hidden-md">
+                            <p class="question-category">What was the average </p>
+                            <h3 class="question-text">price of Brent crude oil in 2023?</h3>
+                            <span class="question-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="pb-.5">
+                                    <g clip-path="url(#clip0_708_2523)">
+                                        <path
+                                            d="M16.8854 15.7054L18.2954 14.2954L12.2954 8.29541L6.29541 14.2954L7.70541 15.7054L12.2954 11.1254L16.8854 15.7054Z"
+                                            fill="#F2F0FF"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_708_2523">
+                                            <rect width="24" height="24" fill="white"
+                                                transform="matrix(-1 0 0 -1 24.0005 24.0005)"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="input-chat">
+                        <input type="text" placeholder="Ask your question" id="mainInput">
+                        <span id="sendIcon">
+                            <img alt="send icon" id="check" src="https://faheim.ai/files/send.svg">
+                        </span>
+                    </div>
+                        
+                    <div class="logo-footer-chat">
+                        <span class="powered-by">
+                            All right reserved 
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function sendMessage() {
+          const inputField = document.getElementById("mainInput"); // Correction ici
+          let chatBox = document.querySelector(".chat-list"); // Correction ici
+      
+          if (!chatBox) {
+            // Si le chatBox n'existe pas encore, on le crée
+            chatBox = document.createElement("div");
+            chatBox.className = "chat-box"; // Tu peux lui donner un style ensuite en CSS
+            document.querySelector(".sidebar-content").appendChild(chatBox);
+          }
+      
+          const userMessage = inputField.value;
+          if (userMessage.trim() !== "") {
+            const userDiv = document.createElement("div");
+            userDiv.classList.add("flex", "justify-end");
+            userDiv.innerHTML = `<div class="bg-gray-300 text-gray-800 p-3 rounded-lg max-w-xs">${userMessage}</div>`;
+            chatBox.appendChild(userDiv);
+      
+            inputField.value = "";
+      
+            // Simuler une réponse du bot
+            setTimeout(() => {
+              const botDiv = document.createElement("div");
+              botDiv.classList.add("flex", "justify-start");
+              botDiv.innerHTML = `<div class="bg-blue-500 text-white p-3 rounded-lg max-w-xs">Je suis là pour vous aider !</div>`;
+              chatBox.appendChild(botDiv);
+              chatBox.scrollTop = chatBox.scrollHeight; // Scroll jusqu'en bas
+            }, 1000);
+          }
+        }
+      
+        // Ajoutons aussi un déclencheur quand on clique sur l'icône envoyer
+        document.getElementById("sendIcon").addEventListener("click", sendMessage);
+      
+        // Et optionnellement, envoyer aussi avec la touche "Entrée"
+        document.getElementById("mainInput").addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            sendMessage();
+          }
+        });
+      </script>
+      
+</body>
+</html>
